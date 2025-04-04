@@ -119,7 +119,7 @@ ToDoList_MobileApp/   # Root directory of the React Native Expo project
 
 ### Fetching Todos
 
-```ts
+```// Fetching Todos
 const fetchTodos = async (setTodos: React.Dispatch<React.SetStateAction<Todo[]>>): Promise<void> => {
   try {
     const response = await axios.get<Todo[]>(API_URL);
@@ -128,6 +128,37 @@ const fetchTodos = async (setTodos: React.Dispatch<React.SetStateAction<Todo[]>>
     console.error('Error fetching todos:', error);
   }
 };
+
+// Adding a Todo
+const addTodo = async (
+  newTask: string,
+  setTodos: React.Dispatch<React.SetStateAction<Todo[]>>,
+  todos: Todo[],
+  setNewTask: React.Dispatch<React.SetStateAction<string>>
+): Promise<void> => {
+  if (!newTask.trim()) return;
+
+  try {
+    const response = await axios.post<Todo>(API_URL, { task: newTask, completed: false });
+    setTodos([...todos, response.data]);
+    setNewTask('');
+  } catch (error) {
+    console.error('Error adding todo:', error);
+  }
+};
+
+// Deleting a Todo
+const deleteTodo = async (id: number, setTodos: React.Dispatch<React.SetStateAction<Todo[]>>, todos: Todo[]): Promise<void> => {
+  try {
+    await axios.delete(`${API_URL}/${id}`);
+    setTodos(todos.filter((todo) => todo.id !== id));
+  } catch (error) {
+    console.error('Error deleting todo:', error);
+  }
+};
+
+export { fetchTodos, addTodo, deleteTodo };
+```
 
 
 ---
