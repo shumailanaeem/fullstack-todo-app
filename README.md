@@ -128,7 +128,10 @@ const fetchTodos = async (setTodos: React.Dispatch<React.SetStateAction<Todo[]>>
     console.error('Error fetching todos:', error);
   }
 };
+```
 
+### Adding Todos
+```
 // Adding a Todo
 const addTodo = async (
   newTask: string,
@@ -146,8 +149,9 @@ const addTodo = async (
     console.error('Error adding todo:', error);
   }
 };
+```
 
-// Deleting a Todo
+```// Deleting a Todo
 const deleteTodo = async (id: number, setTodos: React.Dispatch<React.SetStateAction<Todo[]>>, todos: Todo[]): Promise<void> => {
   try {
     await axios.delete(`${API_URL}/${id}`);
@@ -157,7 +161,6 @@ const deleteTodo = async (id: number, setTodos: React.Dispatch<React.SetStateAct
   }
 };
 
-export { fetchTodos, addTodo, deleteTodo };
 ```
 
 
