@@ -69,7 +69,6 @@ ToDoList_MobileApp/
 │── .expo/                     # Expo-related files (hidden)
 │── .idea/                     # Project settings (hidden)
 │── assets/                    # Static assets (images, icons, etc.)
-│── node_modules/               # Installed dependencies (hidden)
 │── src/
 │──── components/
 │────├── TodoItem.tsx
