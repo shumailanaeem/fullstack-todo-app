@@ -20,7 +20,7 @@ This is a full-stack To-Do application built with a **Node.js backend (Express, 
 ```
 todo-app/
 ├── src/
-├── ├── cofig/
+├── ├── config/
 │   │   ├── database.ts
 │   ├── controllers/
 │   │   ├── todoController.ts
