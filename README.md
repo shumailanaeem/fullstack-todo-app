@@ -150,7 +150,7 @@ const addTodo = async (
   }
 };
 ```
-
+## Deleting a Todo
 ```// Deleting a Todo
 const deleteTodo = async (id: number, setTodos: React.Dispatch<React.SetStateAction<Todo[]>>, todos: Todo[]): Promise<void> => {
   try {
