@@ -1,7 +1,8 @@
 import axios from 'axios';
 import { Todo } from '../types/todo';
+import env from '../config/env';
 
-const API_URL = 'http://192.168.100.72:3000/todos';
+const API_URL = env.API_URL;
 
 export const todoService = {
   fetchTodos: async (): Promise<Todo[]> => {
